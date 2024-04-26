@@ -107,7 +107,7 @@ func handleConnection(conn net.Conn, server *BankingServer) {
 			withdrawAmount, _ := strconv.ParseFloat(strings.TrimSpace(string(buf[:n])), 64)
 			if success := server.Withdraw(user, withdrawAmount); success {
 				conn.Write([]byte(fmt.Sprintf("Withdrawal successful. Your new balance is: $%.2f\n", user.Balance)))
-			} else if success == false {
+			} else {
 				conn.Write([]byte("Insufficient funds"))
 			}
 		case "exit":
