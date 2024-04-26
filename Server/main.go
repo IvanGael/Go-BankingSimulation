@@ -123,8 +123,8 @@ func main() {
 	server := NewBankingServer()
 
 	// Add some users to the banking server
-	server.AddUser("user1", "password1", 1000.0)
-	server.AddUser("user2", "password2", 500.0)
+	server.AddUser("user1", "AB123456@", 1000.0)
+	server.AddUser("user2", "B@234165A", 500.0)
 
 	// Start the server
 	listener, err := net.Listen("tcp", "localhost:8080")
